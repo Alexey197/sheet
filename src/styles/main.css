@@ -21,31 +21,36 @@ body {
   display: flex;
   align-items: center;
   width: 245px;
-  padding: 5px;
-  border: 1px solid #e2e3e3;
+  padding-left: 25px;
+  border: 1px solid #ccc;
   border-top: none;
+  border-left: none;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 14px;
+  font-family: GothamPro, Arial, sans-serif
 }
 
 .row:first-child .cell {
-  justify-content: center;
-  padding: 0 5px;
-  background: #f8f9f2;
-  border: 1px solid #000;
+  align-items: start;
+  border: 1px solid red;
   border-left: none;
+  font-weight: 600;
+  font-stretch: normal;
+  font-size: 15px;
+  line-height: 18px;
 }
 
 .row:first-child .cell:first-child {
-  border-left: 1px solid #000;
-  /*position: relative;*/
+  border-left: 1px solid #ccc;
 }
 
 .cell:first-child {
-  /*box-sizing: border-box;*/
-  justify-content: center;
   width: 245px;
   height: 45px;
-  border: 1px solid #000;
-  background: #f8f9f2;
+  padding-left: 35px;
+  border: 1px solid #ccc;
+  
   border-top: none;
 }
 
@@ -53,9 +58,8 @@ body {
   height: 105px;
   width: 245px;
   padding: 15px 15px 5px 25px;
-  border-top: 1px solid #000;
+  border-top: 1px solid #ccc;
   text-align: left;
-  /*font: 400 15px/18px 'GothamPro-Medium', Arial, sans-serif;*/
 }
 
 .cell .selected {
