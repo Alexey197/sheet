@@ -4,7 +4,8 @@ import './styles/main.css'
 
 const $table = document.querySelector('.sheet_table')
 
-model.forEach(block => {
+model.forEach((block, i) => {
+  console.log(i)
   const html = row(block)
   $table.insertAdjacentHTML('beforeend', html)
 })

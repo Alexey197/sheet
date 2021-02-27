@@ -4,7 +4,7 @@ export function row(block) {
     <div class="row">
       ${html}
     </div>
-    <div class="tip">
+    <div class="tip tip-hidden">
       ${block.text}
     </div>
   `
