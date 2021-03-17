@@ -1,11 +1,7 @@
 import {model} from './model'
+import {Site} from './classes/site'
 import './styles/main.css'
 
-const $table = document.querySelector('.sheet_table')
+const table = new Site('.sheet_table')
 
-model.forEach((block) => {
-  console.log(block.cell)
-  console.log(block.text)
-  $table.insertAdjacentHTML('beforeend', block.cell.toHTML())
-  $table.insertAdjacentHTML('beforeend', block.text.toHTML())
-})
+table.render(model)
