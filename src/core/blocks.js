@@ -1,4 +1,12 @@
 import {template} from '../utils'
+import {DomListeners} from './DomListeners'
+
+class BlockComponent extends DomListeners {
+  toHTML() {
+    // return ''
+    throw new Error('Метод toHTML должен быть реализован')
+  }
+}
 
 class Block {
   constructor(value) {
