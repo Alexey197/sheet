@@ -4,12 +4,19 @@ body {
   box-sizing: border-box;
 }
 
-.container {
+#app {
   display: flex;
+}
+
+.container {
+  /*display: flex;*/
+  margin: 0 auto;
+  position: relative;
 }
 
 .sheet_table {
   margin: 0 auto;
+  position: relative;
 }
 
 .row {
@@ -43,6 +50,7 @@ body {
 
 .row:first-child .cell:first-child {
   border-left: 1px solid #ccc;
+  position: relative;
 }
 
 .cell:first-child {

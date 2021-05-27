@@ -1,4 +1,4 @@
-import {model} from './model'
+// import {model} from './model'
 // import {Site} from './core/site'
 import './styles/main.css'
 import {Price} from './components/price/Price'
