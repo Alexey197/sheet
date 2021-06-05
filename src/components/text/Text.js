@@ -1,7 +1,7 @@
 import {PriceComponent} from '../../core/PriceComponent'
+import {createText} from './text.template'
 
 export class Text extends PriceComponent{
-  // static className = 'tip'
   constructor($root) {
     super($root, {
       name: 'Text',
@@ -9,10 +9,10 @@ export class Text extends PriceComponent{
     });
   }
   static className() {
-    return 'tip'
+    return 'tips'
   }
   
   toHTML() {
-    return '<div>Text</div>'
+    return createText()
   }
 }
