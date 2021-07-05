@@ -1,38 +1,38 @@
 import {rowsArr} from '../../model'
 
-function createCell(content) {
+function createCell(index, content) {
   return `
-    <div class="cell">${content}</div>
+    <div class="cell cell-${index}" data-order="${index}">${content}</div>
   `
 }
 
 function createRow(content) {
   return `
-    <div class="row">${content}</div>
+    <div class="row" data-type="row">${content}</div>
   `
 }
 
 export function createTable() {
   // const colsCount = rowsArr[0].length
-  // const rowsCount = rowsArr.length
+  const rowsCount = rowsArr.length
   const rows = []
-  rowsArr.map(el => {
-    const row = []
-    el.map(el => {
-      const cell = createCell(el)
-      row.push(cell)
-    })
-    rows.push(createRow(row.join('')))
-  })
-  //
-  // for (let i = 0; i < rowsCount; i++) {
+  // rowsArr
+  //     .map(el => {
   //   const row = []
-  //   for (let j = 0; j < rowsArr[i].length; j ++) {
-  //     const cell = (createCell(rowsArr[i][j]))
-  //     row.push(cell)
-  //   }
-  //   rows.push(createRow(row.join('')))
-  // }
+  //   row.push(el
+  //       .map(el => createCell(el))
+  //       .join(''))
+  //   rows.push(createRow(row))
+  // })
+
+  for (let i = 0; i < rowsCount; i++) {
+    const row = []
+    for (let j = 0; j < rowsArr[i].length; j++) {
+      const cell = (createCell(i, rowsArr[i][j]))
+      row.push(cell)
+    }
+    rows.push(createRow(row.join('')))
+  }
   
   return rows.join('')
 }
