@@ -40,7 +40,7 @@ body {
 
 .row:first-child .cell {
   align-items: start;
-  border: 1px solid red;
+  border: 1px solid #ccc;
   border-left: none;
   font-weight: 600;
   font-stretch: normal;
@@ -71,14 +71,17 @@ body {
 }
 
 .selected {
-  background-color: red;
+  background-color: #c9c5c5;
+  transition: background-color .1s ease-in;
 }
 
 .tip {
   display: none;
   position: absolute;
   top: 15px;
-  background: red;
+  background: #fff;
+  box-shadow: 5px 5px 0.5em -0.1em rgb(0 0 6 / 30%);
+  border: 1px solid #ccc;
   color: black;
   padding: 5px 10px 5px 10px;
   margin: 15px 0 0 10px;
