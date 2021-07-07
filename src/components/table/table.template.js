@@ -13,17 +13,8 @@ function createRow(content) {
 }
 
 export function createTable() {
-  // const colsCount = rowsArr[0].length
   const rowsCount = rowsArr.length
   const rows = []
-  // rowsArr
-  //     .map(el => {
-  //   const row = []
-  //   row.push(el
-  //       .map(el => createCell(el))
-  //       .join(''))
-  //   rows.push(createRow(row))
-  // })
 
   for (let i = 0; i < rowsCount; i++) {
     const row = []
