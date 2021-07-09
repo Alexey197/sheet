@@ -2,7 +2,6 @@ import {PriceComponent} from '../../core/PriceComponent'
 import {createTable} from './table.template'
 import {$} from "../../core/dom";
 
-
 export class Table extends PriceComponent{
   constructor($root) {
     super($root, {
