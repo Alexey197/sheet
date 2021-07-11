@@ -14,6 +14,5 @@ export class Text extends PriceComponent{
   
   toHTML() {
     return createText()
-    console.log(this.$root)
   }
 }
