@@ -2,10 +2,11 @@ import {PriceComponent} from "../../core/PriceComponent";
 import {createInput} from "./input.template";
 
 export class Input extends PriceComponent{
-    constructor($root) {
+    constructor($root, options) {
         super($root, {
             name: 'Input',
-            listeners: ['input']
+            listeners: ['input'],
+            ...options
         })
     }
 

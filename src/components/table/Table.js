@@ -3,10 +3,11 @@ import {createTable} from './table.template'
 import {$} from "../../core/dom";
 
 export class Table extends PriceComponent{
-  constructor($root) {
+  constructor($root, options) {
     super($root, {
       name: 'Table',
-      listeners: ['click', 'mouseover', 'mouseout']
+      listeners: ['click', 'mouseover', 'mouseout'],
+      ...options
     })
   }
 
@@ -22,25 +23,25 @@ export class Table extends PriceComponent{
     console.log(this.$root)
   }
 
-  onMouseover() {
-    toggleHoverClass('block')
+  onMouseover(event) {
+    toggleHoverClass()
+    this.emitter.emit('it is working', event.target.dataset.order)
   }
 
-  onMouseout() {
-    toggleHoverClass('none')
+  onMouseout(event) {
+    toggleHoverClass()
+    this.emitter.emit('it is not working', event.target.dataset.order)
   }
 }
 
-function toggleHoverClass(displayType) {
+function toggleHoverClass() {
   if (event.target.dataset.order !== '0') {
     const $target = $(event.target)
-    const textArr = Array.from(document.querySelectorAll('.tip'))
     const $parent = $target.closest('[data-type="row"]')
     Array.from($parent.$el.children).map(el => {
       if (el.className !== 'selected') {
         el.classList.toggle('selected')
       }
     })
-    textArr[event.target.dataset.order].style.display = displayType
   }
 }
