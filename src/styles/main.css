@@ -73,6 +73,7 @@ body {
 .selected {
   background-color: #c9c5c5;
   transition: background-color .1s ease-in;
+  cursor: pointer;
 }
 
 .tip {

@@ -18,7 +18,7 @@ export class Input extends PriceComponent{
         return createInput()
     }
 
-    onInput() {
-      console.log('Input', this.$root)
+    onInput(event) {
+      console.log('Input', event.target.value)
     }
 }

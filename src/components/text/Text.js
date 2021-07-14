@@ -21,13 +21,13 @@ export class Text extends PriceComponent{
     super.init()
     const textArr = Array.from(this.$root.findAll('.tip'))
     
-    this.emitter.subscribe('it is working', () => {
+    this.$on('table:mouseover', () => {
       if (event.target.dataset.order !== '0') {
         textArr[event.target.dataset.order].style.display = 'block'
       }
     })
   
-    this.emitter.subscribe('it is not working', () => {
+    this.$on('table:mouseout', () => {
       textArr[event.target.dataset.order].style.display = 'none'
     })
   }

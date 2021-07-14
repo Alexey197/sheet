@@ -25,12 +25,12 @@ export class Table extends PriceComponent{
 
   onMouseover(event) {
     toggleHoverClass()
-    this.emitter.emit('it is working', event.target.dataset.order)
+    this.$emit('table:mouseover', event.target.dataset.order)
   }
 
   onMouseout(event) {
     toggleHoverClass()
-    this.emitter.emit('it is not working', event.target.dataset.order)
+    this.$emit('table:mouseout', event.target.dataset.order)
   }
 }
 
