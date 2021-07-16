@@ -17,8 +17,24 @@ export class Input extends PriceComponent{
     toHTML() {
         return createInput()
     }
-
-    onInput(event) {
-      console.log('Input', event.target.value)
+    
+    init() {
+        super.init()
+        this.$subscribe(state => {
+            console.log('InputState', state)
+        })
+    }
+    
+    inputHandler() {
+        const inputValues = Array.from((this.$root.findAll('#number')))
+          .map(i => i.value)
+        const inputObj = {...inputValues}
+        console.log(inputObj);
+        return inputObj
+    }
+    
+    onInput() {
+        const data = this.inputHandler()
+        this.$dispatch({type: 'INPUT_CHANGE', data})
     }
 }

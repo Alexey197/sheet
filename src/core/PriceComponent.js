@@ -5,7 +5,9 @@ export class PriceComponent extends DomListeners{
     super($root, options.listeners)
     this.name = options.name || ''
     this.emitter = options.emitter
+    this.store = options.store
     this.unsubscribers = []
+    this.storeSub = null
   }
   
   toHTML() {
@@ -23,6 +25,14 @@ export class PriceComponent extends DomListeners{
     this.unsubscribers.push(unsub)
   }
   
+  $dispatch(action) {
+    this.storeSub = this.store.dispatch(action)
+  }
+  
+  $subscribe(fn) {
+    this.store.subscribe(fn)
+  }
+  
   init() {
     this.initDOMListeners()
   }
@@ -30,5 +40,6 @@ export class PriceComponent extends DomListeners{
   destroy() {
     this.removeDOMListeners()
     this.unsubscribers.forEach(unsub => unsub())
+    this.storeSub.unsubscribe()
   }
 }

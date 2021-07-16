@@ -17,7 +17,14 @@ export class Table extends PriceComponent{
   toHTML() {
     return createTable()
   }
-
+  
+  init() {
+    super.init()
+    this.$subscribe(state => {
+      console.log('TableState', state)
+    })
+  }
+  
   onClick(event) {
     console.log('Table: onClick', event.target)
     console.log(this.$root)

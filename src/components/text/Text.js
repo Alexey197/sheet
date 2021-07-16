@@ -30,5 +30,9 @@ export class Text extends PriceComponent{
     this.$on('table:mouseout', () => {
       textArr[event.target.dataset.order].style.display = 'none'
     })
+    
+    this.$subscribe(state => {
+      console.log('TextState', state)
+    })
   }
 }
