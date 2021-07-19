@@ -2,14 +2,15 @@ import {rowsArr} from "../../model";
 
 const inputsNumber = rowsArr[1].length
 
-function createInputTemplate(index) {
-    return `<input id="number" type="number" value="0" data-input="${index}">`
+function createInputTemplate(index, value) {
+    return `<input id="number" type="number" value="${value}" data-input="${index}">`
 }
 
-export function createInput() {
+export function createInput(state = {}) {
+    // console.log(state.inputState)
     const inputs = []
     for (let i = 0; i < inputsNumber; i++) {
-        inputs.push(createInputTemplate(i))
+        inputs.push(createInputTemplate(i, state.inputState[i]))
     }
     
     return inputs.join('')

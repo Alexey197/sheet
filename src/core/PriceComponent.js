@@ -30,7 +30,7 @@ export class PriceComponent extends DomListeners{
   }
   
   $subscribe(fn) {
-    this.store.subscribe(fn)
+    this.storeSub = this.store.subscribe(fn)
   }
   
   init() {

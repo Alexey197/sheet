@@ -31,8 +31,8 @@ export class Text extends PriceComponent{
       textArr[event.target.dataset.order].style.display = 'none'
     })
     
-    this.$subscribe(state => {
-      console.log('TextState', state)
-    })
+    // this.$subscribe(state => {
+    //   console.log('TextState', state)
+    // })
   }
 }

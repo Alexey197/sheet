@@ -1,5 +1,6 @@
 import {PriceComponent} from "../../core/PriceComponent";
 import {createInput} from "./input.template";
+import * as actions from "../../core/redux/actions";
 
 export class Input extends PriceComponent{
     constructor($root, options) {
@@ -15,7 +16,7 @@ export class Input extends PriceComponent{
     }
 
     toHTML() {
-        return createInput()
+        return createInput(this.store.getState())
     }
     
     init() {
@@ -23,6 +24,8 @@ export class Input extends PriceComponent{
         this.$subscribe(state => {
             console.log('InputState', state)
         })
+        
+        this.$on('button:click', () => {})
     }
     
     inputHandler() {
@@ -35,6 +38,8 @@ export class Input extends PriceComponent{
     
     onInput() {
         const data = this.inputHandler()
-        this.$dispatch({type: 'INPUT_CHANGE', data})
+        this.$dispatch(actions.inputChange(data))
+        const a = 'Hello'
+        this.$emit('remember', a)
     }
 }

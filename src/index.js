@@ -5,13 +5,18 @@ import {Text} from './components/text/Text'
 import {Input} from "./components/input/Input";
 import {createStore} from "./core/createStore";
 import {rootReducer} from "./core/redux/rootReducer";
+import {storage} from "./core/utils";
+import {Button} from "./components/button/button";
 
-const store = createStore(rootReducer, {
-  inputState: {}
+const store = createStore(rootReducer, storage('price-state'))
+
+store.subscribe(state => {
+  console.log('App State: ', state)
+  storage('price-state', state)
 })
 
 const price = new Price('#app', {
-  components: [Table, Text, Input],
+  components: [Table, Text, Input, Button],
   store
 })
 

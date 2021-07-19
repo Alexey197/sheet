@@ -6,7 +6,7 @@ export class Table extends PriceComponent{
   constructor($root, options) {
     super($root, {
       name: 'Table',
-      listeners: ['click', 'mouseover', 'mouseout'],
+      listeners: ['mouseover', 'mouseout'],
       ...options
     })
   }
@@ -20,19 +20,19 @@ export class Table extends PriceComponent{
   
   init() {
     super.init()
-    this.$subscribe(state => {
-      console.log('TableState', state)
-    })
+    // this.$subscribe(state => {
+    //   console.log('TableState', state)
+    // })
+    this.$on('remember', text => console.log('Table from input', text))
+    // this.$subscribe(state => {
+    //   console.log('TableState', state)
+    // })
   }
   
-  onClick(event) {
-    console.log('Table: onClick', event.target)
-    console.log(this.$root)
-  }
-
   onMouseover(event) {
     toggleHoverClass()
     this.$emit('table:mouseover', event.target.dataset.order)
+    // this.$dispatch({type: 'TEST'})
   }
 
   onMouseout(event) {
