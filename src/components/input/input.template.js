@@ -7,11 +7,10 @@ function createInputTemplate(index, value) {
 }
 
 export function createInput(state = {}) {
-    // console.log(state.inputState)
     const inputs = []
     for (let i = 0; i < inputsNumber; i++) {
         inputs.push(createInputTemplate(i, state.inputState[i]))
     }
-    
+
     return inputs.join('')
 }

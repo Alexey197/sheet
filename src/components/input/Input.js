@@ -21,25 +21,23 @@ export class Input extends PriceComponent{
     
     init() {
         super.init()
-        this.$subscribe(state => {
-            console.log('InputState', state)
-        })
+        // this.$subscribe(state => {
+        //     console.log('InputState', state)
+        // })
         
         this.$on('button:click', () => {})
     }
     
-    inputHandler() {
-        const inputValues = Array.from((this.$root.findAll('#number')))
-          .map(i => i.value)
-        const inputObj = {...inputValues}
-        console.log(inputObj);
+    inputHandler(event) {
+        let input = event.target.dataset.input
+        const inputObj = {}
+        inputObj[input] = event.target.value
         return inputObj
     }
     
-    onInput() {
-        const data = this.inputHandler()
+    onInput(event) {
+        const data = this.inputHandler(event)
+        
         this.$dispatch(actions.inputChange(data))
-        const a = 'Hello'
-        this.$emit('remember', a)
     }
 }
